@@ -21,12 +21,19 @@ namespace MyApp.Web2
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // primitive way
+            app.Run(async context => {
+                await context.Response.WriteAsync("<h1>Hello Primitive World!<h1>");
+            });
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseRouting();
+
 
             app.UseEndpoints(endpoints =>
             {

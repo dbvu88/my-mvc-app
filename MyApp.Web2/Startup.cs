@@ -25,6 +25,9 @@ namespace MyApp.Web2
             app.UseDefaultFiles();
             // server file inside wwwroot folder
             app.UseStaticFiles();
+
+            // include npm dir to the project
+            app.UseNodeModules();
         }
     }
 }
